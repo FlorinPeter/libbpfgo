@@ -322,9 +322,9 @@ func NewModuleFromFileArgs(args NewModuleArgs) (*Module, error) {
 	C.set_print_fn()
 
 	// TODO: remove this once libbpf memory limit bump issue is solved
-	if err := bumpMemlockRlimit(); err != nil {
-		return nil, err
-	}
+	//if err := bumpMemlockRlimit(); err != nil {
+	//	return nil, err
+	//}
 
 	opts := C.struct_bpf_object_open_opts{}
 	opts.sz = C.sizeof_struct_bpf_object_open_opts
